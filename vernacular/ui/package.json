@@ -1,0 +1,21 @@
+{
+  "name": "vernacular",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "*",
+    "express": "^4.13.3",
+    "python-shell": "^0.5.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  },
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  }
+}

@@ -1,0 +1,11 @@
+if אין
+print כתוב
+else אלא
+elif אלא אין
+not לא
+while בהדי-ד
+or בי
+in איכא
+not in ליכא
+return אהדיר
+and ו

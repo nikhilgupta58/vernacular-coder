@@ -1,0 +1,3 @@
+año = 2018
+si año == 2018:
+	impríma('hola')

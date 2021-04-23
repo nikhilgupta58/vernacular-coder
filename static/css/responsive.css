@@ -1,0 +1,84 @@
+/*bootstrap media queries*/
+
+/*large devices*/
+
+@media (max-width: 1200px) {
+    #right{
+        display: none;
+    }
+
+    #middle{
+        width: 75%;
+        float: right;
+        transform: translateX(0);
+        left: initial;
+    }
+    /*ok*/
+    
+}
+
+@media (min-width: 1200px) {
+    /*ok*/
+  
+}
+
+/*medium devices*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #left{
+        width: 22%;
+    } 
+
+}
+
+/*small device*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    #left{
+        width: 28%;
+    }
+
+    #middle{
+        width: 68%
+    }
+}
+
+/*extra small*/
+
+@media ( max-width: 767px) {
+  #left{
+    display: none;
+  }
+
+  #middle{
+    position: absolute;
+    width: 90%;
+    top: 60%;
+  }
+
+  #right{
+    display: block;
+    position: absolute;
+    top: 13%;
+    width: 95%;
+    left: 10%
+  }
+
+}
+
+@media ( max-width: 480px) {
+  /*ok*/
+}
+
+@media ( max-width: 320px) {
+    #right{
+        display: none;
+    }
+
+    #middle{
+        width: 98%;
+        position: initial;
+        display: initial;
+    }
+}

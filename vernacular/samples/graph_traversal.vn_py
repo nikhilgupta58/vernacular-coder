@@ -1,0 +1,73 @@
+#         4
+#       /   \
+#      2     6
+#     / \   / \
+#    1   3|5   7
+
+
+lớp Nút:
+    định __khởi__(tự, số_liệu):
+        tự.trái = không_ai
+        tự.phải = không_ai
+        tự.số_liệu = số_liệu
+
+    # để_thêm Nút
+    định để_thêm(tự, số_liệu):
+        nếu tự.số_liệu:
+            nếu số_liệu < tự.số_liệu:
+                nếu tự.trái là không_ai:
+                    tự.trái = Nút(số_liệu)
+                khác:
+                    tự.trái.để_thêm(số_liệu)
+            khác_nếu số_liệu > tự.số_liệu:
+                nếu tự.phải là không_ai:
+                    tự.phải = Nút(số_liệu)
+                khác:
+                    tự.phải.để_thêm(số_liệu)
+        khác:
+            tự.số_liệu = số_liệu
+
+    định thứ_tự_qua_trước(tự, Nút):
+        nếu không Nút:
+            quay_về
+        tự.vlàit(Nút)
+        tự.thứ_tự_qua_trước(Nút.trái)
+        tự.thứ_tự_qua_trước(Nút.phải)
+
+    định thứ_tự_qua_giữa(tự, Nút):
+        nếu không Nút:
+            quay_về
+        tự.thứ_tự_qua_giữa(Nút.trái)
+        tự.vlàit(Nút)
+        tự.thứ_tự_qua_giữa(Nút.phải)
+
+    định thứ_tư_qua_sau(tự, Nút):
+        nếu không Nút:
+            quay_về
+        tự.thứ_tư_qua_sau(Nút.trái)
+        tự.thứ_tư_qua_sau(Nút.phải)
+        tự.vlàit(Nút)
+
+    định vlàit(tự, Nút):
+        in(dây(Nút.số_liệu) + "  ", hết ='')
+
+
+# Create tree.
+gốc = Nút(4)
+gốc.để_thêm(2)
+gốc.để_thêm(1)
+gốc.để_thêm(3)
+gốc.để_thêm(6)
+gốc.để_thêm(5)
+gốc.để_thêm(7)
+
+# Traverse.
+in("***************** Pre_order traversal ******************")
+gốc.thứ_tự_qua_trước(gốc)
+in()
+in("***************** In_order traversal ******************")
+gốc.thứ_tự_qua_giữa(gốc)
+in()
+in("***************** Post_order traversal ******************")
+gốc.thứ_tư_qua_sau(gốc)
+

@@ -1,0 +1,73 @@
+#         4
+#       /   \
+#      2     6
+#     / \   / \
+#    1   3|5   7
+
+
+clase Node:
+    def __inic__(misma, datos):
+        misma.izquierda = nada
+        misma.derecho = nada
+        misma.datos = datos
+
+    # inserte Node
+    def inserte(misma, datos):
+        if misma.datos:
+            if datos < misma.datos:
+                if misma.izquierda is nada:
+                    misma.izquierda = Node(datos)
+                otracosa:
+                    misma.izquierda.inserte(datos)
+            osi datos > misma.datos:
+                if misma.derecho is nada:
+                    misma.derecho = Node(datos)
+                otracosa:
+                    misma.derecho.inserte(datos)
+        otracosa:
+            misma.datos = datos
+
+    def pre_orden_transverso(misma, node):
+        if no node:
+            regresar
+        misma.visite(node)
+        misma.pre_orden_transverso(node.izquierda)
+        misma.pre_orden_transverso(node.derecho)
+
+    def en_orden_transverso(misma, node):
+        if no node:
+            regresar
+        misma.en_orden_transverso(node.izquierda)
+        misma.visite(node)
+        misma.en_orden_transverso(node.derecho)
+
+    def después_orden_transverso(misma, node):
+        if no node:
+            regresar
+        misma.después_orden_transverso(node.izquierda)
+        misma.después_orden_transverso(node.derecho)
+        misma.visite(node)
+
+    def visite(misma, node):
+        impríma(cadena(node.datos) + "  ", fin ='')
+
+
+# árbol.
+raíz = Node(4)
+raíz.inserte(2)
+raíz.inserte(1)
+raíz.inserte(3)
+raíz.inserte(6)
+raíz.inserte(5)
+raíz.inserte(7)
+
+# transverso.
+impríma("***************** Pre_order transverso ******************")
+raíz.pre_orden_transverso(raíz)
+impríma()
+impríma("***************** In_order transverso ******************")
+raíz.en_orden_transverso(raíz)
+impríma()
+impríma("***************** Post_order transverso ******************")
+raíz.después_orden_transverso(raíz)
+

@@ -1,0 +1,4 @@
+{
+  "translator_test.py::TestCLITranslator::test_simple_program": true,
+  "translator_test.py::TestCLITranslator::test_translate_all_lang": true
+}

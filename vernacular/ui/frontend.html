@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<!-- <body onload="verna-main.reset();"> -->
+
+<script type="text/javascript">
+	function readTxtarea(){
+// 		alert(document.getElementById("v_input").value);
+		var code_input = document.getElementById("v_input").value;
+		var hardcoded_prog_lang = "python3";
+		var hardcoded_human_lang_src = "hi";
+		var hardcoded_human_lang_target = "en";
+		var req_dict = {
+			"code_input": code_input, 
+			"prog_lang": hardcoded_prog_lang, 
+			"src_lang": hardcoded_human_lang_src, 
+			"target_lang": hardcoded_human_lang_target
+		};
+
+
+		  // When not using axios.
+		  // // An object of options to indicate where to post to
+		  // var post_options = {
+		  //     host: 'closure-compiler.appspot.com',
+		  //     port: '80',
+		  //     path: '/compile',
+		  //     method: 'POST',
+		  //     headers: {
+		  //         'Content-Type': 'application/x-www-form-urlencoded',
+		  //         'Content-Length': Buffer.byteLength(post_data)
+		  //     }
+		  // };
+
+		  // // Set up the request
+		  // var post_req = http.request(post_options, function(res) {
+		  //     res.setEncoding('utf8');
+		  //     res.on('data', function (chunk) {
+		  //         console.log('Response: ' + chunk);
+		  //     });
+		  // });
+
+
+		// new code.
+		// Read* https://stackoverflow.com/questions/6158933/how-to-make-an-http-post-request-in-node-js
+		// Read https://www.sitepoint.com/axios-beginner-guide/
+		// Read https://www.w3schools.com/nodejs/nodejs_http.asp
+		axios({
+		  method: 'post',
+		  host: 'localhost',
+		  port: '8080',
+		  url: '/translate/',
+		  dataType: 'jsonp',
+		  data: req_dict
+		})
+		.then(function(response) {
+		  console.log("\n\n====>from UI!!!!!!!!!!!");
+		  console.log(response);
+		});
+	}
+</script>
+
+<form id="verna-main">
+
+<div id="main_frame">
+
+<h3 align="center">Vernacular</h3>
+
+<div id="menu_pane" style="float: left; width: 100px;border: 2px solid #000000;padding:10px;height: 300px">
+	<h3>Python in  Hindi</h3>
+	<h3>Java in  Hindi</h3>
+</div>
+<pre></pre>
+
+<div id="left_pane" style="float: left; width: 450px;border: 2px solid #000000;padding:10px; height:auto; min-height: 300px;overflow: auto">
+
+	<textarea rows="10" cols="50" id="v_input">
+	</textarea>
+
+	<br><br>
+	<input type="submit" value="Run" style="float: right;height:30px;width:100px" onclick="readTxtarea()"> 
+</div>
+
+
+<div id="right_pane" style="float: right; width: 450px;border: 2px solid #000000;padding:10px; height:auto; min-height: 300px;overflow: auto">
+
+	<textarea rows="10" cols="50" id="v_output">
+	</textarea>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
+
